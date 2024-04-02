@@ -7,17 +7,8 @@ namespace ejercicio6Ficheros
     {
         static void Main(string[] args)
         {
-            string nombre = "hola";
-            string rutaArchivo = "C:\\Users\\Profesor\\source\\repos\\ejercicio6Ficheros\\" + nombre + ".txt";
-
-            Console.WriteLine("Introduce Nombre");
-            string nombreA=Console.ReadLine();
-            Console.WriteLine("Introduce Apellidos");
-            string apellidosA=Console.ReadLine();
-            Console.WriteLine("Introduce edad");
-            int edad = Convert.ToInt32(Console.ReadLine());
-
-            string contenidoFichero = generarContenido(nombreA, apellidosA, edad);
+            
+            string rutaArchivo = "C:\\Users\\Profesor\\source\\repos\\ejercicio6Ficheros\\" + ".txt";
 
             int opcion;
             bool cerrarMenu = false;
