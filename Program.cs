@@ -110,8 +110,8 @@ namespace ejercicio6Ficheros
             void seleccionLinea()
             {
 
-                using (StreamWriter sw = new StreamWriter(rutaArchivo))
-                {
+                
+                
                     Console.WriteLine("Introduce el numero de la linea en la que deseas añadir el texto");
                     int numeroLinea = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Introduce el texto que deseas añadir");
@@ -137,8 +137,7 @@ namespace ejercicio6Ficheros
 
                          rutaArchivo, lineas);
 
-                            Console.WriteLine("El texto se ha escrito correctamente en la línea especificada.");
-                            sw.WriteLine(textoNuevo);
+                           
 
                         }
                         else
@@ -150,12 +149,12 @@ namespace ejercicio6Ficheros
                     {
                         Console.WriteLine("Error al leer/escribir el archivo: " + e.Message);
                     }
-                }
+                
             }
             void posicionEspecifica()
             {
-                using (StreamWriter sw = new StreamWriter(rutaArchivo))
-                {
+                
+                
                     Console.WriteLine("Introduce la posicion en la cual deseas añadir el nuevo texto");
                     int posicion = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Introduce el texto que deseas añadir");
@@ -164,19 +163,19 @@ namespace ejercicio6Ficheros
                     try
                     {
                         // Leer todo el contenido del archivo
-                        string contenidoOriginal = File.ReadAllText(rutaArchivo);
+                         textoNuevo = File.ReadAllText(rutaArchivo);
 
                         // Verificar si la posición deseada está dentro del rango del archivo
-                        if (posicion >= 0 && posicion <= contenidoOriginal.Length)
+                        if (posicion >= 0 && posicion <= textoNuevo.Length)
                         {
                             // Insertar el nuevo texto en la posición deseada
-                            string nuevoContenido = contenidoOriginal.Insert(posicion, textoNuevo);
+                            string nuevoContenido = textoNuevo.Insert(posicion, textoNuevo);
 
                             // Sobrescribir el archivo con el nuevo contenido
                             File.WriteAllText(rutaArchivo, nuevoContenido);
 
                             Console.WriteLine("El texto se ha escrito correctamente en la posición especificada.");
-                            sw.WriteLine(nuevoContenido);
+                            
                         }
                         else
                         {
@@ -188,7 +187,7 @@ namespace ejercicio6Ficheros
                         Console.WriteLine("Error al leer/escribir el archivo: " + e.Message);
                     }
 
-                }
+                
 
             }
         }
